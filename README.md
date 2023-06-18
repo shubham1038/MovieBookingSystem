@@ -1,47 +1,93 @@
-Problem statement
+# Movie Ticket Booking Platform
+
 XYZ wants to build an online movie ticket booking platform that caters to both B2B (theatre partners) and B2C (end customers) clients.
 
-Key goals it wants accomplished as part of its solution:
-•	Enable theatre partners to onboard their theatres over this platform and get access to a bigger customer base while going digital. 
+### Author
+Shubham Agarwal (shubham.agarwal7076@gmail.com)
 
-•	Enable end customers to browse the platform to get access to movies across different cities, languages, and genres, as well as book tickets in advance with a seamless experience.
+### Tech
 
-Technologies recommended
-•	Language -Java and other add-on languages
-•	Frameworks- Any
-•	Database - Any
-•	Integration technologies- Any
-•	Cloud technologies- Any
-•	Preferred editor to build and present solution
+Program uses the following technologies:
 
-PS: The given exercise will help you get prepared for technical discussion and demonstrate your current understanding on key architectural artifacts. It’s expected that you may not all sections hence can ignore them. 
+* [Java] - Code base language (version 1.8)
+* [Spring] - For Dependency Injection (version 4.0)
+* [Apache Maven] - Build automation tool (version 3.3.9)
+* [junit] - Library for testing (version 4.12)
+* [codehaus mojo] - Execute Java app plugin (version 1.6.0)
 
-Evaluation criteria
-•	Code artifacts (APIs Contract, Design Patterns, Any one Scenario Implementation)
-•	Design principles to address functional requirement and non-functional requirement
-•	DB & Data model
-•	Platform solutions detailing
-•	Solution completeness, presentation, and discussion.
-•	Solution coverage uniqueness and extensibility.
+### Installation
 
-Note: Incomplete solution component would be discussed during discussion round. All sections are not mandatory.
-You can skip solution areas that you are not comfortable by making a note of it.
+XYZ wants to build an online movie ticket booking platform that caters to both B2B (theatre partners) and B2C (end customers) clients.
 
-Functional features to implement Good to have - Code Implementation (Read scenario)):
+  #Enable theatre partners to onboard their theatres over this platform and get access to a bigger customer base while going digital.
+  #Enable end customers to browse the platform to get access to movies across different cities, languages, and genres, as well as book tickets in advance with a seamless experience.
+  
+### Execution
 
-Anyone of the following read scenarios: (Only Service Implementation needed/ No UI required)
-•	Browse theatres currently running the show (movie selected) in the town, including show timing by a chosen date
-•	Booking platform offers in selected cities and theatres
-o	50% discount on the third ticket
-o	Tickets booked for the afternoon show get a 20% discount
+Movie Ticket Booking System requires [Maven](https://maven.apache.org/) v3+ and [Java] v1.8+ to run.
 
-Candidate Solution:
+Please set JAVA_HOME and M2_HOME in environment variable then 
+Open a terminal (CMD) and go to project location before executing below commands to compile and execute:
+
+```sh
+$ mvn clean install
+$ mvn exec:java
+```
+
+Output will be shown in the terminal. Find bellow an output example:
+
+"C:\Program Files\Zulu\zulu-8\bin\java.exe"
+Jun 18, 2023 2:53:59 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@37a71e93: startup date [Sun Jun 18 14:53:59 IST 2023]; root of context hierarchy
+--------------------------------
+ Search Movies across different cities, languages         
+--------------------------------
+| Movie      |
+ | Movie 1    |
+--------------------------------
+ Search Theatres         
+--------------------------------
+| Theatre Name | Theatre City |
+--------------------------------
+| Theatre 1  | City 1   |
+Show Time -2023-06-18 03:53:59
+--------------------------------
+ Tickets booked successfully!         
+--------------------------------
+| Movie      | Theatre  | Number of Tickets | Time |
+--------------------------------
+| Movie 1    | Theatre 1 | 0003 | 2023-06-18 03:53:59 |
+--------------------------------
+ Bulk Booking Done successfully!         
+--------------------------------
+| Movie      | Theatre  | Number of Tickets | Time |
+| Movie 1    | Theatre 1 | 0005 | 2023-06-18 03:53:59 |
+| Movie 2    | Theatre 2 | 0005 | 2023-06-18 02:54:59 |
+ -----------Bulk Booking Done successfully!---------
+Jun 18, 2023 2:53:59 PM org.springframework.context.support.AbstractApplicationContext doClose
+INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@37a71e93: startup date [Sun Jun 18 14:53:59 IST 2023]; root of context hierarchy
 
 
-Panel Feedback: 
+### Design
 
-Anyone of the following write scenarios: Good to have - Code Implementation (write scenario):
-•	Book movie tickets by selecting a theatre, timing, and preferred seats for the day
-•	Theatres can create, update, and delete shows for the day.
-•	Bulk booking and cancellation
-•	Theatres can allocate seat inventory and update them for the show
+These are the main classes used in Movie Ticket Booking System project:
+
+| *com.movie.booking.service* |
+| ------------ | 
+| MovieTicketBookingPlatformService: * Class to perform below functionality 
+| Add Movies  , Add Theatre , Search Movies, Theatres , Book Movies / Bulk Movies , Cancel Movie/ Bulk Movie and discount Feature.* |
+
+| *com.movie.booking.repoo* |
+| ------------ | 	
+| MovieTicketBookingPlatformRepo: *Class to load task from resource.*  |
+
+| *com.movie.booking.model* |
+| ------------ | 
+| Booking: *Class to store show timings and No of tickets to book*  |
+| Movie: * Class to store Movie name , language, genre, duration .*  |
+| Showtime: * Class to store Show related information .*  |
+| Theatre: *Class to keep Theatre details .*  |
+
+| *com.movie.booking.exceptionn* |
+| ------------ | 
+| MovieTicketBookingPlatformException: *Custom exception to handle Movie Ticket Booking exceptions*  |
