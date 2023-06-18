@@ -34,39 +34,6 @@ $ mvn clean install
 $ mvn exec:java
 ```
 
-Output will be shown in the terminal. Find bellow an output example:
-
-"C:\Program Files\Zulu\zulu-8\bin\java.exe"
-Jun 18, 2023 2:53:59 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
-INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@37a71e93: startup date [Sun Jun 18 14:53:59 IST 2023]; root of context hierarchy
---------------------------------
- Search Movies across different cities, languages         
---------------------------------
-| Movie      |
- | Movie 1    |
---------------------------------
- Search Theatres         
---------------------------------
-| Theatre Name | Theatre City |
---------------------------------
-| Theatre 1  | City 1   |
-Show Time -2023-06-18 03:53:59
---------------------------------
- Tickets booked successfully!         
---------------------------------
-| Movie      | Theatre  | Number of Tickets | Time |
---------------------------------
-| Movie 1    | Theatre 1 | 0003 | 2023-06-18 03:53:59 |
---------------------------------
- Bulk Booking Done successfully!         
---------------------------------
-| Movie      | Theatre  | Number of Tickets | Time |
-| Movie 1    | Theatre 1 | 0005 | 2023-06-18 03:53:59 |
-| Movie 2    | Theatre 2 | 0005 | 2023-06-18 02:54:59 |
- -----------Bulk Booking Done successfully!---------
-Jun 18, 2023 2:53:59 PM org.springframework.context.support.AbstractApplicationContext doClose
-INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@37a71e93: startup date [Sun Jun 18 14:53:59 IST 2023]; root of context hierarchy
-
 
 ### Design
 
@@ -74,19 +41,22 @@ These are the main classes used in Movie Ticket Booking System project:
 
 | *com.movie.booking.service* |
 | ------------ | 
-| MovieTicketBookingPlatformService: * Class to perform below functionality 
-| Add Movies  , Add Theatre , Search Movies, Theatres , Book Movies / Bulk Movies , Cancel Movie/ Bulk Movie and discount Feature.* |
+| MovieTicketBookingPlatformService: Class to perform below functionality 
+| Add Movies, Add Theatre , Search Movies/Theatres , Book Movies/Bulk Movies , Cancel Movie/Bulk Movies and discount Feature* |
 
+| *com.movie.booking.handler* |
+| ------------ | 	
+| MovieTicketBookingPlatformHandler: Class to handle movie booking/cancel/bulk booking/cancellation functionality|
 | *com.movie.booking.repoo* |
 | ------------ | 	
-| MovieTicketBookingPlatformRepo: *Class to load task from resource.*  |
+| MovieTicketBookingPlatformRepo: Class to load task from resource.  |
 
 | *com.movie.booking.model* |
 | ------------ | 
 | Booking: *Class to store show timings and No of tickets to book*  |
-| Movie: * Class to store Movie name , language, genre, duration .*  |
-| Showtime: * Class to store Show related information .*  |
-| Theatre: *Class to keep Theatre details .*  |
+| Movie: *Class to store Movie name , language, genre, duration*  |
+| Showtime: *Class to store Show related information.*  |
+| Theatre: *Class to keep Theatre details.*  |
 
 | *com.movie.booking.exceptionn* |
 | ------------ | 
